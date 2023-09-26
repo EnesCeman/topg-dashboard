@@ -1,6 +1,6 @@
 {
     "buildCommand": "npm i && cd client && npm run build",
-    "outputDirectory": "/client/build",
+    "outputDirectory": ".",
     "framework": "vite",
     "rewrites": [
         {

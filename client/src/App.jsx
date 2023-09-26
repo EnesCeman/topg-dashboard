@@ -5,7 +5,7 @@ import DateCards from "./containers/DateCards/DateCards";
 import axios from "axios";
 import { DataProvider } from "./store/DataContext";
 
-axios.defaults.baseURL = "https://topg-backend.onrender.com/";
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 axios.defaults.withCredentials = true;
 
 function App() {
