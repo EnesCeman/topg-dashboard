@@ -68,7 +68,7 @@ export const DataProvider = ({ children }) => {
           endDate,
         };
 
-        const response = await axios.post("api/bigquery", requestBody, {
+        const response = await axios.post("bigquery", requestBody, {
           headers: {
             "Content-Type": "application/json",
           },
