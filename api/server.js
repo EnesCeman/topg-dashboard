@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: "https://topg-dashboard.onrender.com/",
+    origin: "https://topg-dashboard.onrender.com",
   })
 );
 
