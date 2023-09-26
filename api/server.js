@@ -4,9 +4,12 @@ const { BigQuery } = require("@google-cloud/bigquery");
 
 require("dotenv").config();
 
+let keyFileContent = process.env.GOOGLE_KEY_FILE_JSON;
+keyFileContent = JSON.parse(keyFileContent);
+
 const bigquery = new BigQuery({
   projectId: process.env.GCLOUD_PROJECT_ID,
-  keyFilename: process.env.GCLOUD_KEYFILE_PATH,
+  credentials: keyFileContent,
 });
 
 const app = express();
