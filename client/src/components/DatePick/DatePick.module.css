@@ -1,0 +1,22 @@
+.datepick-container {
+  display: flex;
+  fill: white;
+}
+
+.datepick-container input {
+  margin-left: 0.5rem;
+  font-size: x-large;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+  font-size: x-large;
+}
+
+.main-title {
+  display: flex;
+  justify-content: space-between;
+}
