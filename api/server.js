@@ -22,6 +22,7 @@ app.use(
     origin: [
       "https://topg-dashboard.onrender.com",
       "https://topg-dashboard.vercel.app",
+      "http://localhost:5173",
     ],
   })
 );

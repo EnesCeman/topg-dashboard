@@ -93,7 +93,7 @@ export default function Charts() {
           endDate,
         };
 
-        const response = await axios.post("/activebybrowser", requestBody, {
+        const response = await axios.post("/api/activebybrowser", requestBody, {
           headers: {
             "Content-Type": "application/json",
           },

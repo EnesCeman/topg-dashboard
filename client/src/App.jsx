@@ -6,6 +6,11 @@ import axios from "axios";
 import { DataProvider } from "./store/DataContext";
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+
+if (import.meta.env.VITE_BASE_URL === undefined) {
+  axios.defaults.baseURL = "http://localhost:4000/";
+}
+
 axios.defaults.withCredentials = true;
 
 function App() {
