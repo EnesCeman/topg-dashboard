@@ -26,11 +26,11 @@ app.use(
   })
 );
 
-app.get("/test", (req, res) => {
+app.get("/api/test", (req, res) => {
   res.json("test ok");
 });
 
-app.post("/bigquery", async (req, res) => {
+app.post("/api/bigquery", async (req, res) => {
   try {
     const { startDate, endDate } = req.body;
 
@@ -56,7 +56,7 @@ app.post("/bigquery", async (req, res) => {
   }
 });
 
-app.post("/activebybrowser", async (req, res) => {
+app.post("/api/activebybrowser", async (req, res) => {
   try {
     const { startDate, endDate } = req.body;
 
