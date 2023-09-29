@@ -38,7 +38,7 @@ const RegisterPage = () => {
           <input
             className={styles.input}
             type="name"
-            placeholder="John Doe"
+            placeholder="First and Last Name"
             value={name}
             onChange={(ev) => setName(ev.target.value)}
           />
@@ -52,7 +52,7 @@ const RegisterPage = () => {
           <input
             className={styles.input}
             type="tel"
-            placeholder="123456"
+            placeholder="Phone Number"
             value={phoneNumber}
             onChange={(ev) => setPhoneNumber(ev.target.value)}
           />
