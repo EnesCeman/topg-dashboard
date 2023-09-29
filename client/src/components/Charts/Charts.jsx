@@ -36,6 +36,7 @@ export default function Charts() {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     layout: {
       padding: {
         top: 30,
