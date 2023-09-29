@@ -15,6 +15,10 @@
   border-radius: 5px;
   box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
   width: 50%;
+
+  @media (max-width: 515px) {
+    width: 75%;
+  }
 }
 
 .chart-title {

@@ -7,6 +7,10 @@
   align-items: center;
   justify-content: space-around;
   min-height: 100vh;
+
+  @media (max-width: 515px) {
+    padding: 3rem;
+  }
 }
 
 .inner {
