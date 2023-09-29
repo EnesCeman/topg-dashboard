@@ -1,6 +1,10 @@
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const { BigQuery } = require("@google-cloud/bigquery");
+const { login } = require("./controller/login");
+const { profile } = require("./controller/profile");
+const { register } = require("./controller/register");
 
 require("dotenv").config();
 
@@ -15,6 +19,7 @@ const bigquery = new BigQuery({
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 
 app.use(
   cors({
@@ -82,4 +87,15 @@ app.post("/api/activebybrowser", async (req, res) => {
   }
 });
 
-app.listen(4000);
+app.post("/api/login", login);
+app.post("/api/register", register);
+
+app.get("/api/profile", profile);
+
+app.post("/api/logout", (req, res) => {
+  res.cookie("token", "").json(true);
+});
+
+app.listen(5000, () => {
+  console.log("Listening on port 5000");
+});

@@ -54,11 +54,16 @@ export const DataProvider = ({ children }) => {
 
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [user, setUser] = useState(null);
 
   if (startDate === "" && endDate === "") {
     setStartDate("2023-09-20");
     setEndDate("2023-09-21");
   }
+
+  useEffect(() => {
+    axios.get("/profile").then(({ data }) => setUser(data));
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -93,6 +98,8 @@ export const DataProvider = ({ children }) => {
     endDate,
     setEndDate,
     cardValues,
+    user,
+    setUser,
   };
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
