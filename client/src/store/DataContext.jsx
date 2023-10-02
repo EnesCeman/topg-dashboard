@@ -44,10 +44,11 @@ const calculateCardValues = (data) => {
 };
 
 export const DataProvider = ({ children }) => {
-  const todayDate = format(new Date(), "yyyy-MM-dd");
+  const todayDate = new Date();
+  todayDate.setDate(todayDate.getDate() - 8);
 
   const initialEndDate = new Date(todayDate);
-  initialEndDate.setDate(initialEndDate.getDate() + 1);
+  initialEndDate.setDate(initialEndDate.getDate() + 7);
 
   const [data, setData] = useState(null);
 
@@ -58,7 +59,7 @@ export const DataProvider = ({ children }) => {
     screenPageViews: 0,
   });
 
-  const [startDate, setStartDate] = useState(todayDate);
+  const [startDate, setStartDate] = useState(format(todayDate, "yyyy-MM-dd"));
   const [endDate, setEndDate] = useState(format(initialEndDate, "yyyy-MM-dd"));
   const [user, setUser] = useState(null);
 
