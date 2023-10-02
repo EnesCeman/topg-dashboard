@@ -22,6 +22,7 @@ export default function DatePick() {
         <div className="end-date">
           <input
             type="date"
+            min={startDate}
             value={endDate}
             onChange={(e) => {
               setEndDate(e.target.value);

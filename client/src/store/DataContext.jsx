@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
+import { format } from "date-fns";
 
 const DataContext = createContext();
 
@@ -43,6 +44,11 @@ const calculateCardValues = (data) => {
 };
 
 export const DataProvider = ({ children }) => {
+  const todayDate = format(new Date(), "yyyy-MM-dd");
+
+  const initialEndDate = new Date(todayDate);
+  initialEndDate.setDate(initialEndDate.getDate() + 1);
+
   const [data, setData] = useState(null);
 
   const [cardValues, setCardValues] = useState({
@@ -52,14 +58,9 @@ export const DataProvider = ({ children }) => {
     screenPageViews: 0,
   });
 
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [startDate, setStartDate] = useState(todayDate);
+  const [endDate, setEndDate] = useState(format(initialEndDate, "yyyy-MM-dd"));
   const [user, setUser] = useState(null);
-
-  if (startDate === "" && endDate === "") {
-    setStartDate("2023-09-20");
-    setEndDate("2023-09-21");
-  }
 
   useEffect(() => {
     axios.get("/profile").then(({ data }) => setUser(data));
