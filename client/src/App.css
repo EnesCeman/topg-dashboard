@@ -21,3 +21,54 @@ body {
   /* margin: 0 auto; */
   text-align: center;
 }
+
+.form-control {
+  width: 100% !important;
+  border-radius: 1rem !important;
+}
+
+.flag-dropdown {
+  border-radius: 1rem !important;
+}
+
+.selected-flag {
+  border-radius: 1rem !important;
+}
+
+.selected-flag:hover {
+  background-color: transparent !important;
+}
+
+.country-list {
+  background-color: #1d2634 !important;
+  margin-top: 5px !important;
+  max-height: 400px !important;
+}
+
+.search {
+  background-color: #1d2634 !important;
+  border: 1px solid white;
+}
+
+.dial-code {
+  color: white !important;
+}
+
+.country:hover {
+  background-color: lightsteelblue !important;
+  border-radius: 1rem;
+}
+
+.country:hover .country-name,
+.country:hover .dial-code {
+  color: black !important;
+}
+
+.flag-dropdown.open .selected-flag {
+  border-radius: 1rem !important;
+}
+
+.highlight {
+  background-color: rgb(47, 119, 213) !important;
+  border-radius: 1rem;
+}

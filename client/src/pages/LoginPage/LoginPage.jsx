@@ -4,9 +4,15 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useData } from "../../store/DataContext";
 
+import {
+  VisibilityOffOutlined as VisibilityOffOutlinedIcon,
+  VisibilityOutlined as VisibilityOutlinedIcon,
+} from "@mui/icons-material";
+
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const { setUser } = useData();
 
@@ -42,13 +48,26 @@ const LoginPage = () => {
             value={email}
             onChange={(ev) => setEmail(ev.target.value)}
           />
-          <input
-            className={styles.input}
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={(ev) => setPassword(ev.target.value)}
-          />
+          <div className={styles.login_password_container}>
+            <input
+              className={styles.input}
+              type={!showPassword ? "password" : "text"}
+              placeholder="password"
+              value={password}
+              onChange={(ev) => setPassword(ev.target.value)}
+            />
+            <div
+              className={styles.visibility_icon}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {!showPassword ? (
+                <VisibilityOffOutlinedIcon />
+              ) : (
+                <VisibilityOutlinedIcon />
+              )}
+            </div>
+          </div>
+
           <button className={styles["login_button"]}>Login</button>
           <div className={styles["no_account"]}>
             Don't have an account yet?{" "}

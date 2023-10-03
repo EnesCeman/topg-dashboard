@@ -7,6 +7,8 @@
   align-items: center;
   justify-content: space-around;
   min-height: 100vh;
+  height: 100vh;
+  width: 100%;
 
   @media (max-width: 515px) {
     padding: 3rem;
@@ -15,6 +17,13 @@
 
 .inner {
   margin-bottom: 16rem;
+  width: 100%;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .login_text {
@@ -32,11 +41,15 @@
 .login_button {
   background-color: #4158b1;
   padding: 0.5rem;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
   width: 100%;
   color: white;
   border-radius: 1rem;
   border-width: 0;
+}
+
+.login_button:disabled {
+  background-color: #7b8794;
 }
 
 .no_account {
@@ -51,6 +64,14 @@
   color: white;
 }
 
+.input_fulfilled {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 .input {
   width: 100%;
   border: 1px solid #e2e8f0;
@@ -62,4 +83,70 @@
   padding-left: 0.75rem;
   border-radius: 1rem;
   color-scheme: none;
+}
+
+.phone_container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.phone_input {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  border-radius: 1rem;
+  color-scheme: none;
+}
+
+.error {
+  padding-left: 0.5rem;
+  bottom: -1rem;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.check_icon {
+  position: absolute;
+  left: -2rem;
+  color: green;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.show_number {
+  padding-left: 0.2rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: start;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  color: gray;
+}
+
+.login_password_container {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.visibility_icon {
+  position: absolute;
+  color: rgb(94, 94, 94);
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.visibility_icon:hover {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background-color: rgb(216, 216, 216);
 }
