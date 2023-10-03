@@ -7,7 +7,7 @@ export default function DatePick() {
   return (
     <div className={styles.main}>
       <div className={styles["main-title"]}>
-        <h2>TOPG DASHBOARD</h2>
+        <h2>EMP DASHBOARD DEMO</h2>
       </div>
       <div className={styles["datepick-container"]}>
         <div className="start-date">
